@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    font-family: 'Poppins', sans-serif;
+    margin: 5px;
+}
+
+
+.bg_default {
+	@apply bg-gradient-to-r from-purple-500 to-pink-500;
+}
+
+.bg_secondary {
+    @apply bg-violet-900;
+}
+
+.bg_red {
+    @apply bg-red-500;
+}
+
+.popup__menu {
+    @apply p-6 bg-gray-200
+    absolute top-24 right-0 mx-4 my-2 min-w-[140px] 
+    border border-black rounded-xl;
+}
+
+.popup__item {
+	@apply flex gap-3 items-center border-gray-300 
+	py-3 px-4 font-medium cursor-pointer;
+}
+
+
+.header__center {
+    @apply max-[650px]:hidden flex flex-col gap-2 justify-self-center border items-center
+    border-gray-300 rounded-full py-3 px-10 font-medium shadow-md shadow-gray-200;
+}
+
+
+.header__right {
+    @apply justify-self-end col-start-3
+    flex gap-3 items-center border border-gray-300 p-6 shadow-md shadow-gray-200
+    rounded-full py-3 right-0 px-4 mr-0 font-medium cursor-pointer max-w-[135px];
+}
