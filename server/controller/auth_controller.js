@@ -1,20 +1,26 @@
 const UserModel = require('../models/user.js');
-
+const bcrypt = require('bcrypt');
 
 const createUser = async (req,res) => {
     //se reciben los siguietnes parametros del request
     const { name, email, password } = req.body;
 
     try {
-        //se llama al metodo que hashea la password
-        password = await User.hashPassword(password);
+        /* A salt is a random string. By hashing a plain text password plus
+        a salt, the hash algorithm’s output is no longer predictable. The 
+        same password will no longer yield the same hash. The salt gets 
+        automatically included with the hash, so you do not need to store 
+        it in a database.
+        Hay que explicar en la parte teorica el concepto de salt */
+        const salt = await bcrypt.genSalt(Number(process.env.salt));
+        const hashed_password = await bcrypt.hash(password, salt);
+
         //se crea el usuario con los datos recibidos
         const User = new UserModel(
             {name: name,
             email: email,
-            password: password}
+            password: hashed_password}
         );
-        
         
         //se guarda el doc del user
         await User.save();
