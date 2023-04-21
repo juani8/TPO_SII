@@ -3,7 +3,7 @@ const filesystem = require('fs');
 
 
 const generatePairRSA = () => {
-  if (filesystem.existsSync('../keys/private_key.pem') || filesystem.existsSync('../keys/public_key.pem')){
+  if (filesystem.existsSync('./keys/private_key.pem') || filesystem.existsSync('./keys/public_key.pem')){
     return console.log('A pair of keys already exists');
   }
   generateKeyPair(
@@ -34,7 +34,7 @@ const generatePairRSA = () => {
       
       filesystem.writeFileSync('./keys/public_key.pem', public_key, 'utf-8');  
       
-      console.log('Key pair succesfully created')
+      console.log('RSA key pair succesfully created')
     }
   );
 }
