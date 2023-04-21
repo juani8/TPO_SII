@@ -10,7 +10,7 @@ const NotLoggedInPopUp = (props) => {
   return (
     <div>
       <div className={`${props.toggle ? 'flex' : 'hidden'} popup__menu`}>
-        <ul className="list-none flex flex-1 flex-col justify-center items-start">
+        <ul className='list-none flex flex-1 flex-col justify-center items-start'>
           <li onClick={() => {props.setActual('Main page'); props.setToggle(false)}} className = {itemCSS('Main page')}>
             <Link to={'/'} className='popup__item'>
               Main page

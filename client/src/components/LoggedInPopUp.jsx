@@ -16,7 +16,7 @@ const LoggedInPopUp = (props) => {
   return (
     <div>
       <div className={`${props.toggle ? 'flex' : 'hidden'} popup__menu`}>
-        <ul className="list-none flex flex-1 flex-col justify-center items-start">
+        <ul className='list-none flex flex-1 flex-col justify-center items-start'>
           <li className = 'popup__item' onClick={logout}>
             Log out
           </li>

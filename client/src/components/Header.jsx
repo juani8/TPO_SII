@@ -17,15 +17,15 @@ const Header = () => {
   {/*boton del menu minimizado del navbar*/}
   const [toggle, setToggle] = useState(false);
   {/*ventana seleccionada actualmente*/}
-  const [actual, setActual] = useState("home");
+  const [actual, setActual] = useState('home');
   const navigate = useNavigate();
 
   
   return (
     <div>
       <header className='p-4 grid grid-cols-3 justify-between items-center h-150'>
-        <Link to={'/'} onClick={() => setActual('home')} className="flex items-center gap-1">
-          <img src={shield} alt="" className='w-6 h-6 mx-2 inline align-middle' onClick={() => navigate('/')} />
+        <Link to={'/'} onClick={() => setActual('home')} className='flex items-center gap-1'>
+          <img src={shield} alt='' className='w-6 h-6 mx-2 inline align-middle' onClick={() => navigate('/')} />
           <span className='max-[1000px]:hidden font-bold text-xl align-middle'>Encryption</span>
         </Link>
 
@@ -36,8 +36,8 @@ const Header = () => {
 				</div>
 
         <div className ={`${!!ready ? 'bg_default' : 'bg-inherit'} header__right`} onClick={() => setToggle(!toggle)}>
-          <img src={toggle ? xmark : bars} alt="" className="w-5 h-5" />
-          <img src={user_logo} alt="" className="min-w-[20px] h-[20px] right-0 on:border-none" />
+          <img src={toggle ? xmark : bars} alt='' className='w-5 h-5' />
+          <img src={user_logo} alt='' className='min-w-[20px] h-[20px] right-0 on:border-none' />
           <p className={`${(!ready) && 'hidden'} text-ellipsis overflow-hidden`}>
             {`${(ready) && user.name}`}
           </p>
