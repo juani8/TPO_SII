@@ -1,8 +1,8 @@
-require("dotenv").config();
-const connection = require("./db");
-const app = require("./app");
+require('dotenv').config();
+const connection = require('./db');
+const app = require('./app');
 
-
+// instancia la conexión a Mongo
 connection();
 
 async function init() {
@@ -12,4 +12,5 @@ async function init() {
     })
 }
 
+// instancia la conexión al servidor
 init();

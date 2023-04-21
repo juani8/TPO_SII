@@ -9,21 +9,23 @@ const generatePairRSA = () => {
   generateKeyPair(
     'rsa',
     {      
-      modulusLength: 2048,
+      // 4096 bits de longitud
+      modulusLength: 4096,
       publicKeyEncoding: {
-        // stands for "SubjectPublicKeyInfo"
+        // stands for 'SubjectPublicKeyInfo'
         // formato estandar de encoding para claves publicas
         type:'spki',
         format: 'pem'
       },
       privateKeyEncoding: {
-        // stands for "Public-Key Cryptography Standards #8"
+        // stands for 'Public-Key Cryptography Standards #8'
         // formato estandar de encoding para claves privadas
         type:'pkcs8',
         format: 'pem'
       }
     }, 
-    // callback function
+    // callback function: una vez se ejecuta generateKeyPair;
+    // nos quedamos con los siguientes parametros
     (err, public_key, private_key) => {
       if (err) return console.log(err);
 
