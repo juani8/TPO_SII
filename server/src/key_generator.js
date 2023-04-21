@@ -1,0 +1,41 @@
+const { generateKeyPair } = require('crypto');
+const filesystem = require('fs');
+
+
+const generatePairRSA = () => {
+  if (filesystem.existsSync('../keys/private_key.pem') || filesystem.existsSync('../keys/public_key.pem')){
+    return console.log('A pair of keys already exists');
+  }
+  generateKeyPair(
+    'rsa',
+    {      
+      modulusLength: 2048,
+      publicKeyEncoding: {
+        // stands for "SubjectPublicKeyInfo"
+        // formato estandar de encoding para claves publicas
+        type:'spki',
+        format: 'pem'
+      },
+      privateKeyEncoding: {
+        // stands for "Public-Key Cryptography Standards #8"
+        // formato estandar de encoding para claves privadas
+        type:'pkcs8',
+        format: 'pem'
+      }
+    }, 
+    // callback function
+    (err, public_key, private_key) => {
+      if (err) return console.log(err);
+
+      
+      filesystem.writeFileSync('./keys/private_key.pem', private_key, 'utf-8');
+      
+      filesystem.writeFileSync('./keys/public_key.pem', public_key, 'utf-8');  
+      
+      console.log('Key pair succesfully created')
+    }
+  );
+}
+
+
+generatePairRSA();
