@@ -1,3 +1,19 @@
-esta es la nueva base del proyecto
-console.log('')
-console.log('')
+Posibles temas para desarrollar en la parte teorica:
+
+- ¿Que es el salt? ¿Que es el pepper?
+
+- Ventajas de guardar la contraseña cifrada en la base de datos
+
+- Como funciona el validador de contraseña (metodo compare() de la libreria BCrypt, 
+When the bcrypt.compare() method is called, it takes the plain text password entered by the user and the 
+hashed password retrieved from the database. It then extracts the salt value from the hashed password and 
+uses it to hash the plain text password. This generates a new hash that should match the hash value that was 
+previously stored in the database.
+In other words, the salt is included in the hashed password itself, so the bcrypt.compare() method can 
+extract it and use it to hash the plain text password before comparing it with the stored hash.)
+
+- ¿En que consiste el sistema de cifrado asimetrico RSA?
+
+- Metodo de javascript Crypto (de donde proviene los motedos para aplicar RSA)
+
+- ¿Que es la extención de archivo .pem?

@@ -6,8 +6,11 @@ const { createUser,
 const { verify_token } = require("../middleware/verify_token");
 
 
+
 const router = Router();
 
+// lo que hace esto es disponibilizar los metodos del controlador
+// en cada una de las rutas de la aplicación 
 
 router.post('/register', (req,res) => createUser(req,res));
 
