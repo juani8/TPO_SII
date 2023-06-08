@@ -39,5 +39,4 @@ const generatePairRSA = () => {
   );
 }
 
-
 generatePairRSA();

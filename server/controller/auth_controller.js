@@ -10,8 +10,7 @@ const createUser = async (req,res) => {
         a salt, the hash algorithm’s output is no longer predictable. The 
         same password will no longer yield the same hash. The salt gets 
         automatically included with the hash, so you do not need to store 
-        it in a database.
-        Hay que explicar en la parte teorica el concepto de salt */
+        it in a database. */
         const salt = await bcrypt.genSalt(Number(process.env.salt));
         const hashed_password = await bcrypt.hash(password, salt);
 
@@ -32,7 +31,7 @@ const createUser = async (req,res) => {
 
 
 const validateLogin = async (req,res) => {
-    console.log(req.body);
+
     const { email, password } = req.body;
 
     // mongo document email: request email

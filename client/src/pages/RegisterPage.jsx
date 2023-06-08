@@ -36,7 +36,7 @@ const RegisterPage = () => {
 					onSubmit={handleRegisterUser}>
 					<label htmlFor='i_name' className='p-4 border rounded-lg font-medium flex flex-col'> 
 						Name: 
-						<input type='text' placeholder='Enter your name...'  id='i_name' 
+						<input type='text' placeholder='Enter your name...'  id='i_name' autoComplete='off'
 							className='font-normal focus:outline-none'
 							value={name} 
 							onChange={(event) => setName(event.target.value)}/>
@@ -44,7 +44,7 @@ const RegisterPage = () => {
 					<div className='py-2'></div>
 					<label htmlFor='i_email' className='p-4 border rounded-lg font-medium flex flex-col'> 
 						Email: 
-						<input type='email' placeholder='Enter your email...'  id='i_email' 
+						<input type='email' placeholder='Enter your email...'  id='i_email' autoComplete='off'
 							className='font-normal focus:outline-none'
 							value={email} 
 							onChange={(event) => setEmail(event.target.value)}/>

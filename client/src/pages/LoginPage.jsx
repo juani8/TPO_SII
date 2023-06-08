@@ -44,7 +44,7 @@ const LoginPage = () => {
 				onSubmit={handleLogin}>
 					<label htmlFor='i_email' className='p-4 border rounded-lg font-medium flex flex-col'> 
 					Email:
-						<input type='email' placeholder='Enter your email...'  id='i_email' 
+						<input type='email' placeholder='Enter your email...'  id='i_email' autocomplete="off"
 							className='font-normal focus:outline-none'
 							value={email} 
 							onChange={(event) => setEmail(event.target.value)}/>
